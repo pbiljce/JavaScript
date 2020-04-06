@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak 3</title>
+</head>
+<body>
+    <script>
+        var minute =parseInt(prompt("Unesite vrijeme u minutama"));
+        var poruka = prompt("Unesite poruku");
+
+        /*Prvo rješenje
+        setInterval("var vrijeme = new Date();if(vrijeme.getMinutes() == "+minute+" && vrijeme.getSeconds() == 0) alert('"+poruka+"')",1000);*/
+
+        /*Drugo rješenje*/
+        setInterval(prikazPoruke,1000);
+        function prikazPoruke(){
+            var vrijeme = new Date();
+            if(vrijeme.getMinutes() == minute && vrijeme.getSeconds() == 0){
+                alert(poruka);
+            }
+        }
+    </script>
+</body>
+</html>
