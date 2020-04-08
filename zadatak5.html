@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        span{
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <label for="redovi">Broj redova matrice</label>
+    <input type="text" name="redovi" id="redovi">
+    <br>
+    <label for="kolone">Broj kolona matrice</label>
+    <input type="text" name="kolone" id="kolone">
+    <br>
+    <button onclick="dimenzijeMatrice()">Sačuvaj</button>
+    <br>
+
+    <script>
+        var koordinate = [];
+        function dimenzijeMatrice(){
+            red = document.getElementById("redovi").value;
+            kolona = document.getElementById("kolone").value;
+            for(var i = 0; i < red; i++){
+                for(var j = 0; j < kolona; j++){
+                    koordinate.push(parseInt(prompt("Unesite vrijednost za element (" + i + ", " + j + ")")));
+                }
+                var br = document.createElement("br");
+                document.body.appendChild(br);
+            }
+            var tekst = document.createElement("p");
+            document.body.appendChild(tekst);
+            tekst.innerHTML = "Elementi matrice su:";
+            for(var l = 0; l < koordinate.length; l++){
+                if(l % kolona == 0){
+                    var b = document.createElement("br");
+                    document.body.appendChild(b)
+                }
+                var sp = document.createElement("span");
+                document.body.appendChild(sp);
+                sp.innerHTML = koordinate[l];
+
+            }
+        }
+    </script>
+    </body>
+</html>
