@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak12</title>
+</head>
+<body>
+    <button id="btn1" onclick="switchImage()">Prikaži slike</button>
+    <div>
+        <img id="img1" src="">
+    </div>
+    <script>
+        var images = [
+        "https://lumiere-a.akamaihd.net/v1/images/pyke-torture-droid-main_3ebf0fae.jpeg?region=289%2C0%2C544%2C544&width=480",
+        "https://lumiere-a.akamaihd.net/v1/images/chewie-main_e1968a8a.jpeg?region=27%2C0%2C535%2C536&width=480",
+        "https://lumiere-a.akamaihd.net/v1/images/general-engells-main_30552427.jpeg?region=280%2C0%2C720%2C720&width=480"
+        ]
+        var i = 0;
+        function switchImage(){
+            var image = document.getElementById("img1");
+                if(i < images.length){
+                    image.src = images[i++];
+                }else{
+                    i = 0;
+                }
+            setTimeout("switchImage()",1000);
+        }
+    </script>
+</body>
+</html>
