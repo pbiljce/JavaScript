@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak11</title>
+</head>
+<body>
+    <div id="d1">SET MENU</div>
+    <p id="p1"></p>
+    <script>
+        var niz = {"google":"http://www.google.com","yahoo":"http://www.yahoo.com","bing":"http://www.bing.com"};
+
+        var p1 = document.getElementById("p1");
+        var d1 = document.getElementById("d1");
+        d1.addEventListener("click",PrikaziMeni);
+
+        function PrikaziMeni(){
+            for(var i in niz){
+                var a = document.createElement("a");
+                a.innerText = i;
+                a.href = niz[i];
+                a.style.padding = "10px";
+                a.style.border = "1px solid red";
+                a.style.margin = "5px";
+                p1.appendChild(a);
+            }
+        }
+    </script>
+</body>
+</html>
