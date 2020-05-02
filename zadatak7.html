@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak7</title>
+</head>
+<style>
+    table, tr, td{
+        border: 1px solid black;
+    }
+    img{
+        width: 100px;
+        height: 100px;
+    }
+</style>
+<body>
+    <script>
+        var persons = [
+            {
+                id:1,
+                name:"Pyke torture droid",
+                description:"In the Pyke Syndicate's prison on Oba Diah, specialized torture droids are equipped with ways to get prisoners talking.",
+                image:"https://lumiere-a.akamaihd.net/v1/images/pyke-torture-droid-main_3ebf0fae.jpeg?region=289%2C0%2C544%2C544&width=480"
+            },
+            {
+                id:2,
+                name:"Chewbacca",
+                description:"A legendary Wookiee warrior and Han Solo’s longtime co-pilot, Chewbacca continues to serve as faithful first mate to carry out daring missions against the First Order behind the controls of the Millennium Falcon. Known as Chewie to his closest friends, he was part of a core group of rebels who restored freedom to the galaxy during the reign of the Galactic Empire. Known for his short temper and accuracy with a bowcaster, Chewie also has a big heart and unwavering loyalty to his friends.",
+                image:"https://lumiere-a.akamaihd.net/v1/images/chewie-main_e1968a8a.jpeg?region=27%2C0%2C535%2C536&width=480"
+            },
+            {
+                id:3,
+                name:"General Engells",
+                description:"An admirer of Kylo Ren’s, Amret Engell has assumed responsibility for stormtrooper training after the death of Captain Phasma. She sees each new world liberated by the First Order as a source of valuable children to be trained as soldiers for Ren’s regime.",
+                image:"https://lumiere-a.akamaihd.net/v1/images/general-engells-main_30552427.jpeg?region=280%2C0%2C720%2C720&width=480"
+            }
+        ];
+        var table = document.createElement("table");
+        document.body.appendChild(table);
+        var tr = document.createElement("tr");
+        table.appendChild(tr);
+        var columnId = document.createElement("td");
+        columnId.innerText = "id";
+        var columnName = document.createElement("td");
+        columnName.innerText = "name";
+        var columnDescription = document.createElement("td");
+        columnDescription.innerText = "description";
+        var columnImage = document.createElement("td");
+        columnImage.innerText = "image";
+        tr.appendChild(columnId);
+        tr.appendChild(columnName);
+        tr.appendChild(columnDescription);
+        tr.appendChild(columnImage);
+
+        for(var i = 0; i < persons.length; i++){
+            var tr = document.createElement("tr");
+            table.appendChild(tr);
+            var columnId = document.createElement("td");
+            columnId.innerText = persons[i].id;
+            var columnName = document.createElement("td");
+            columnName.innerText = persons[i].name;
+            var columnDescription = document.createElement("td");
+            columnDescription.innerText = persons[i].description;
+            var columnImage = document.createElement("td");
+            var image = document.createElement("img");
+            image.src = persons[i].image;
+            columnImage.appendChild(image);
+            tr.appendChild(columnId);
+            tr.appendChild(columnName);
+            tr.appendChild(columnDescription);
+            tr.appendChild(columnImage);
+        }
+    </script>
+</body>
+</html>
