@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak13</title>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem fuga unde ut voluptatem praesentium ullam esse similique, magnam, voluptate eum dolor quia? Est reiciendis fuga repellat. Dolorum praesentium dignissimos expedita.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima distinctio ullam quae accusantium molestias. Illum, reprehenderit sed nemo fugiat dignissimos laboriosam magnam eaque repellendus accusantium dolorum, sapiente ex libero officiis.</p>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam distinctio facilis soluta similique molestiae excepturi sit corporis in corrupti ea sunt dolores iusto ut ad, officia eum quidem harum magnam.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et deserunt necessitatibus architecto iure, numquam nostrum tempora maiores quae rem voluptatem quos assumenda soluta aperiam quo sed libero doloribus, molestias ex.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Facilis minima, fuga ut dolores natus neque nisi? Vitae quis, illum delectus reprehenderit, beatae esse mollitia saepe eos distinctio, accusantium dolores enim?</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem quos velit ad soluta ipsam ex, similique atque culpa nihil in temporibus maxime labore aut error beatae architecto a delectus eaque.</p>
+    
+    <script>
+        var tags = document.getElementsByTagName("p");
+        for(var i in tags){
+            var search = tags[i].innerHTML.indexOf("architecto");
+            if(search > 0){
+                //console.log(search);
+                tags[i].style.backgroundColor = "#cccccc";
+            }
+        }
+    </script>
+</body>
+</html>
