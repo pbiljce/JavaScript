@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak10</title>
+</head>
+<style>
+    div{
+        width: 100px;
+        height: 50px;
+        background-color: aquamarine;
+    }
+</style>
+<body>
+    <div id="d1" onclick="Unesi(this.id)" style="cursor:pointer;"></div>
+    <script>
+        function Unesi(d){ 
+            var d1 = document.getElementById(d);      
+            var c = parseInt(prompt("Unesite vrijednost za a")) + parseInt(prompt("Unesite vrijednost za b"));
+            var d2 = document.createElement("div");
+            d2.innerText = "a + b = " + c;
+            d1.appendChild(d2);
+        }
+    </script>
+</body>
+</html>
