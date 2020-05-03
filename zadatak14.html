@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Zadatak14</title>
+</head>
+<style>
+    ul{
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+    }
+    #menu{
+        display: flex;
+        flex-direction: row;
+    }
+    #menu li{
+        padding: 0;
+        margin: 5px;
+    }
+    #menu li ul{
+        background-color: #cccccc;
+    }
+</style>
+<body>
+    <ul id="menu">
+        <li class="stavka">
+            <a href="">Google</a>
+            <ul>
+                <li><a href="">Google1</a></li>
+                <li><a href="">Google2</a></li>
+                <li><a href="">Google3</a></li>
+            </ul>
+        </li>
+        <li class="stavka">
+            <a href="">Yahoo</a>
+            <ul>
+                <li><a href="">Yahoo1</a></li>
+                <li><a href="">Yahoo1</a></li>
+                <li><a href="">Yahoo1</a></li>
+            </ul>
+        </li>
+        <li class="stavka">
+            <a href="">Bing</a>
+            <ul>
+                <li><a href="">Bing1</a></li>
+                <li><a href="">Bing2</a></li>
+                <li><a href="">Bing3</a></li>
+            </ul>
+        </li>
+    </ul>
+    <script>
+        var meni = document.getElementById("menu");
+        var stavke = meni.getElementsByTagName("li");
+        for(var i = 0; i < stavke.length; i++){
+            if(stavke[i].className == "stavka"){
+                var podstavke = stavke[i].getElementsByTagName("ul")[0];
+                podstavke.style.display = "none";
+                stavke[i].onmouseout = function(){
+                    var podstavke = this.getElementsByTagName("ul")[0];
+                    podstavke.style.display = "none";
+                }
+                stavke[i].onmouseover = function(){
+                    var podstavke = this.getElementsByTagName("ul")[0];
+                    podstavke.style.display = "";
+                }
+            }
+        }
+    </script>
+</body>
+</html>
