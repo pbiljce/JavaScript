@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primjer7</title>
+</head>
+<body>
+    <script>
+        var d1 = document.createElement("div");
+        d1.style.cssText = "width:500px; height:500px;border:1px solid black;";
+        var mousedown = false;
+        d1.onmousedown = function(){
+            mousedown = true;
+        };
+        d1.onmouseup = function(){
+            mousedown = false;
+        };
+        d1.onmousemove = function(event){
+            if(!mousedown){
+                return;
+            }
+            var d2 = document.createElement("div");
+            d2.style.cssText = "position:absolute;background-color:red;width:5px;height:5px";
+            d2.style.left = event.clientX + "px";
+            d2.style.top = event.clientY + "px";
+            d1.appendChild(d2);
+        }
+        document.body.appendChild(d1);
+    </script>
+</body>
+</html>
