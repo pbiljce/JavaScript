@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Primjer6</title>
+</head>
+<style>
+    div{
+        width: 200px;
+        height: 200px;
+        border: 1px solid black;
+        text-align: center;
+    }
+</style>
+<body>
+    <div id="d1">Neki tekst</div>
+    <br>
+    <div id="d2" onmouseover="this.innerHTML = ''"></div>
+    <script>
+        var d1 = document.getElementById("d1");
+        var d2 = document.getElementById("d2");
+        d1.addEventListener("click",Kopiraj);
+        function Kopiraj(){
+            d2.innerHTML = d1.innerHTML;
+        }
+    </script>
+</body>
+</html>
