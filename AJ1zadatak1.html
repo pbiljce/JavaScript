@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ1zadatak1</title>
+</head>
+<body>
+    <script>
+        function kalkulator(broj1,broj2){
+            this.broj1 = broj1;
+            this.broj2 = broj2;
+            this.saberi = function(){
+                document.write("Zbir dva broja je " + (broj1 + broj2) + "<br>");
+            }
+            this.oduzmi = function(){
+                document.write("Razlika dva broja je " + (broj1 - broj2) + "<br>");
+            }
+            this.mnozenje = function(){
+                document.write("Proizvod dva broja je " + (broj1 * broj2) + "<br>");
+            }
+            this.dijeljenje = function(){
+                document.write("Količnik dva broja je " + (broj1 / broj2) + "<br>");
+            }
+        }
+
+        var kalk = new kalkulator(5,5);
+        kalk.saberi();
+        kalk.oduzmi();
+        kalk.mnozenje();
+        kalk.dijeljenje();
+    </script>
+</body>
+</html>
