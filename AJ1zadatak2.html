@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ1zadatak2</title>
+</head>
+<body>
+    <script>
+        function Knjiga(naziv,naslov){
+            this.naziv = naziv;
+            this.naslov = naslov;
+        }
+        function Biblioteka(knjige){
+            this.knjige = knjige;
+            this.pretraga = function(nazivKnjige){
+                var rezultat = [];
+                for(var i =0; i < this.knjige.length; i++){
+                    if(this.knjige[i].naziv == nazivKnjige){
+                        rezultat.push(this.knjige[i]);
+                    }
+                }
+                console.log(rezultat);
+            }
+        }
+
+        var knjiga1 = new Knjiga("Naziv3","Naslov1");
+        var knjiga2 = new Knjiga("Naziv2","Naslov2");
+        var knjiga3 = new Knjiga("Naziv3","Naslov3");
+        var knjiga4 = new Knjiga("Naziv3","Naslov4");
+        var knjige = [knjiga1,knjiga2,knjiga3,knjiga4];
+
+        var biblioteka = new Biblioteka(knjige);
+        biblioteka.pretraga("Naziv3");
+    </script>
+</body>
+</html>
