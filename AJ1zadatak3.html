@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ1.zadatak3</title>
+    <style>
+        div{
+            margin: 5px;
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="unos">
+    <button onclick="Pretraga()">Pretraga</button>
+
+    <script>
+        function Jelo(sastojci,naziv,cijena){
+            this.sastojci = sastojci;
+            this.naziv = naziv;
+            this.cijena = cijena;
+            this.pretraga = function(jela,nazivJela){
+                var svaJela = [];
+                for(var i in jela){  
+                    if(jela[i].naziv.toUpperCase().indexOf(nazivJela) > -1){
+                        svaJela.push(jela[i]);
+                    }
+                }
+                return svaJela;
+            }
+        }
+        var jelo = new Jelo();
+        var jela = [];
+        var krompirPita = new Jelo(["krompir","brašno","luk","voda","so","biber","ulje"],"Pita krompir","7 KM");
+        jela.push(krompirPita);
+        var burek = new Jelo(["meso","krompir","brašno","luk","voda","so","biber","ulje"],"Pita burek","10 KM");
+        jela.push(burek);
+        var sirnica = new Jelo(["sir","jaja","brašno","voda","so","ulje"],"Pita sirnica","8 KM");
+        jela.push(sirnica);
+
+        function Pretraga(){
+            var unos = document.getElementById("unos").value.toUpperCase();
+            var pretragaJela = jelo.pretraga(jela,unos);
+            for(var j in pretragaJela){
+                var sastojci = [];
+                for(var i in pretragaJela[j].sastojci){
+                sastojci.push(pretragaJela[j].sastojci[i]);
+                }
+                var div = document.createElement("div");
+                div.innerHTML = "Naziv jela: " + pretragaJela[j].naziv + "<br>Sastojci: " + sastojci + "<br>Cijena: " + pretragaJela[j].cijena;
+                document.body.appendChild(div);
+            }
+        }
+    </script>
+</body>
+</html>
