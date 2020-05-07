@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJzadatak4</title>
+    <style>
+        div{
+            width: 600px;
+            height: 500px;
+            border: 1px solid black;
+            padding: 10px;
+        }
+        table, tr, td, th{
+            border: 1px solid black;
+        }
+        table{
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div id="main">
+        <input type="text" id="searchname" placeholder="Pretraga po imenu">
+        <button type="button" onclick="Search()">Pretraži</button>
+        <button type="button" onclick="AllItems()">Prikaži sve</button>
+        <hr>
+        <form action="#">
+            <label for="name">Ime i prezime</label>
+            <input type="text" name="name" id="name">
+            <label for="phone">Broj telefona</label>
+            <input type="text" name="phone" id="phone">
+            <button type="button" onclick="Save()">Snimi</button>
+        </form>
+        <hr>
+    </div>
+    <script>
+        var allItems = [];
+
+        function Phonebook(name,phone){
+            this.name = name;
+            this.phone = phone;
+        }
+        function Save(){
+            var fullname = document.getElementById("name").value;
+            var phonenumber = document.getElementById("phone").value;
+            var newItem = new Phonebook(fullname,phonenumber);
+            allItems.push(newItem);
+            console.log(allItems);
+        }
+        function AllItems(){
+            var table = document.createElement("table");
+            var tr1 = document.createElement("tr");
+            var th1 = document.createElement("th");
+            var th2 = document.createElement("th");
+            th1.innerText = "Ime i prezime";
+            th2.innerText = "Broj telefona";
+            tr1.appendChild(th1);
+            tr1.appendChild(th2);
+            table.appendChild(tr1);
+            for(var i = 0; i < allItems.length; i++){
+                var tr2 = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                td1.innerText = allItems[i].name;
+                td2.innerText = allItems[i].phone;
+                tr2.appendChild(td1);
+                tr2.appendChild(td2);
+                table.appendChild(tr2);
+            }
+            var div = document.getElementById("main");
+            div.appendChild(table);
+        }
+        function Search(){
+            var searchname = document.getElementById("searchname").value.toUpperCase();
+            console.log(searchname);
+            for(var i = 0; i < allItems.length; i++){
+                if(allItems[i].name.toUpperCase().indexOf(searchname) > -1){
+                    var p = document.createElement(p);
+                    p.innerText = "Ime i prezime: " + allItems[i].name + ", Broj telefona: " + allItems[i].phone;
+                    var div = document.getElementById("main");
+                    div.appendChild(p);
+                }
+            }
+        }
+    </script>
+</body>
+</html>
