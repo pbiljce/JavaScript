@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ1zadatak5</title>
+</head>
+<body>
+    <div id="products"></div>
+    <button type="button" onclick="SumAll()">Ukupan iznos</button>
+    <p id="result"></p>
+    <script>
+        var proizvodi = [
+            {name : "Kava",price: "3.5"},
+            {name : "Hljeb",price: "1.2"},
+            {name : "Ulje",price: "2.1"},
+            {name : "Voda",price: "1"},
+            {name : "So",price: "0.7"}
+        ];
+        var table = document.createElement("table");
+        for(var i = 0; i < proizvodi.length; i++){
+            var tr1 = document.createElement("tr");
+            var th1 = document.createElement("th");
+            var th2 = document.createElement("th");
+            var th3 = document.createElement("th");
+            th1.innerText = "Naziv proizvoda";
+            th2.innerText = "Cijena";
+            th3.innerText = "Odabrana količina";
+            tr1.appendChild(th1);
+            tr1.appendChild(th2);
+            tr1.appendChild(th3);
+            table.appendChild(tr1);
+            for(var i = 0; i < proizvodi.length; i++){
+                var tr2 = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                var td3 = document.createElement("td");
+                var input = document.createElement("input");
+                input.id = "input" + i;
+                input.value = 0;
+                td3.appendChild(input);
+                td1.innerText = proizvodi[i].name;
+                td2.innerText = proizvodi[i].price;
+                tr2.appendChild(td1);
+                tr2.appendChild(td2);
+                tr2.appendChild(td3);
+                table.appendChild(tr2);
+            }
+        }
+        var div = document.getElementById("products");
+        div.appendChild(table);
+
+
+        function SumAll(){
+            var sum = 0;
+            for(var i = 0; i < proizvodi.length; i++){
+                var amount = parseFloat(document.getElementById("input" + i).value);
+                sum += proizvodi[i].price * amount;
+            }
+            document.getElementById("result").innerHTML = "Za odabrane proizvode i količine, potrebno je ukupno " + sum + " KM.";
+        }
+    </script>
+</body>
+</html>
