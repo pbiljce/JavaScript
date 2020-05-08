@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJzadatak1</title>
+</head>
+<body>
+    <script>
+        /*Prvi način*/
+        /*function Zivotinja(naziv){
+            this.naziv = naziv;
+            this.oglasiSe = function(){
+                 return "Ja sam životinja, " + this.naziv;
+            }
+        }
+        var Macka = Object.create(Zivotinja);
+        Macka.oglasiSe = function(){
+            return "Ja sam mačka, " + Macka.naziv;
+        };
+        var Pas = Object.create(Zivotinja);
+        Pas.oglasiSe = function(){
+            return "Ja sam pas, " + Pas.naziv;
+        };
+        var Papagaj = Object.create(Zivotinja);
+        Papagaj.oglasiSe = function(){
+            return "Ja sam papagaj, " + Papagaj.naziv;
+        };
+
+        var zivotinja = new Zivotinja("neka životinja");   
+        console.log(zivotinja.oglasiSe());    
+        Macka.naziv = "maca";
+        console.log(Macka.oglasiSe()); 
+        Pas.naziv = "cuko";
+        console.log(Pas.oglasiSe()); 
+        Papagaj.naziv = "papi";
+        console.log(Papagaj.oglasiSe()); */
+
+        /*Drugi način*/
+        class Zivotinja{
+            constructor(naziv){
+                this.naziv = naziv;
+            }
+            oglasiSe(){
+                return "Ja sam životinja, " + this.naziv;
+            }
+        }
+        class Macka extends Zivotinja{
+            oglasiSe(){
+                return "Ja sam mačka, " + this.naziv;
+            }
+        }
+        class Pas extends Zivotinja{
+            oglasiSe(){
+                return "Ja sam pas, " + this.naziv;
+            }
+        }
+        class Papagaj extends Zivotinja{
+            oglasiSe(){
+                return "Ja sam papagaj, " + this.naziv;
+            }
+        }
+        var zivotinja = new Zivotinja("neka životinja");   
+        console.log(zivotinja.oglasiSe());   
+        var macka = new Macka("maca"); 
+        console.log(macka.oglasiSe()); 
+        var pas = new Pas("cuko");
+        console.log(pas.oglasiSe()); 
+        var papagaj = new Papagaj("papi");
+        console.log(papagaj.oglasiSe());
+    </script>
+</body>
+</html>
