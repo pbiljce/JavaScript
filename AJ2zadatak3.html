@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ2zadatak3</title>
+</head>
+<body>
+    <script>
+        class Osoba{
+            constructor(ime){
+                if(ime !== ""){
+                    this.ime = ime;
+                }else{
+                    console.error("Unesite ime");
+                }
+            }
+            setIme(ime){     
+                if(ime !== ""){
+                    this.ime = ime;
+                }else{
+                    console.error("Unesite ime");
+                }
+            }
+            getIme(){
+                return this.ime;
+            }
+            predstaviSe(){
+                alert("Zdravo " + this.ime);
+            }
+        }
+        var osoba1 = new Osoba("");
+        var osoba = new Osoba("Biljana");
+        osoba.predstaviSe();
+    </script>
+</body>
+</html>
