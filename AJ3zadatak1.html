@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ3zadatak1</title>
+</head>
+<body>
+    <script>
+        class Zamka{
+            aktiviraj(ime){
+                if(ime !== ""){
+                    this.brojac = brojac();
+                    if(this.brojac === 1){
+                        this.ime = ime;
+                    }
+                }else{
+                    this.ime = "";
+                }
+            }
+            provjeri(){
+                if(this.ime !== ""){
+                    if(this.brojac === 1){
+                        return "U zamci je " + this.ime + ".<br>";
+                    }else{
+                        return "Zamka nije prazna.<br>";
+                    }
+                }
+                else {
+                    return "Zamka je prazna.<br>";
+                }
+            }
+        }
+        var brojac = (function(){
+            var brojac = 0;
+            return function plus(){
+                brojac+=1;
+                return brojac;
+            }
+        })();
+        var zamka = new Zamka();
+        zamka.aktiviraj("");
+        document.write(zamka.provjeri());
+        
+        var zamka1 = new Zamka();
+        zamka1.aktiviraj("lisica");
+        document.write(zamka1.provjeri());
+        
+        var zamka2 = new Zamka();
+        zamka2.aktiviraj("vuk");
+        document.write(zamka2.provjeri());
+
+        var zamka3 = new Zamka();
+        zamka3.aktiviraj("medvjed");
+        document.write(zamka3.provjeri());
+    </script>
+</body>
+</html>
