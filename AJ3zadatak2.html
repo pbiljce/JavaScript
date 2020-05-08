@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ3zadatak2</title>
+</head>
+<body>
+    <pre id="ispis"></pre>
+    <script>
+        class Pice{
+            constructor(naziv,kolicina){
+                this.naziv = naziv;
+                this.kolicina = kolicina;
+            }
+        }
+
+        var pice1 = new Pice("kava",2);
+        var pice2 = new Pice("voda",3);
+        var pice3 = new Pice("čaj",5);
+        var omiljenaPica = [pice1,pice2,pice3];
+        var jsonOmiljenaPica = JSON.stringify(omiljenaPica);
+        document.getElementById("ispis").innerHTML = jsonOmiljenaPica;
+    </script>
+</body>
+</html>
