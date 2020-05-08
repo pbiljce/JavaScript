@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AJ3zadatak3</title>
+    <style>
+        table,tr,td, th{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <div id="customers"></div>
+    <script>
+        if(window.XMLHttpRequest){
+            var xhr = new XMLHttpRequest();
+        }else{
+            var xhr = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xhr.onreadystatechange = function(){
+            if(this.readyState == 4 && this.status == 200){
+                var result = JSON.parse(this.responseText);
+                prikazi(result.customers);
+            }
+        }
+        xhr.open("GET","http://ita.saleiv.com/api/customers",true);
+        xhr.send();
+
+        function prikazi(res){
+            var div = document.getElementById("customers");
+            var table = document.createElement("table");
+            var tr1 = document.createElement("tr");
+            var th1 = document.createElement("th");
+            th1.innerText = "ID";
+            var th2 = document.createElement("th");
+            th2.innerText = "Ime";
+            var th3 = document.createElement("th");
+            th3.innerText = "Adresa";
+            tr1.appendChild(th1);
+            tr1.appendChild(th2);
+            tr1.appendChild(th3);
+            table.appendChild(tr1);
+            for(var i = 0; i < res.length; i++){
+                var tr2 = document.createElement("tr");
+                var td1 = document.createElement("td");
+                td1.innerText = res[i].cus_id;
+                var td2 = document.createElement("td");
+                td2.innerText = res[i].cus_name;
+                var td3 = document.createElement("td");
+                td3.innerText = res[i].cus_address;
+                tr2.appendChild(td1);
+                tr2.appendChild(td2);
+                tr2.appendChild(td3);
+                table.appendChild(tr2);
+            }
+            div.appendChild(table);
+        }
+    </script>
+</body>
+</html>
